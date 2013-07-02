@@ -57,18 +57,18 @@ namespace DotNetOpenAuth.LinkedInOAuth2
         #endregion
 
         /// <summary>
-        /// Creates a new Google OAuth2 Client, requesting the default "userinfo.profile" and "userinfo.email" scopes.
+        /// Creates a new LinkedIn OAuth2 Client, requesting the default "userinfo.profile" and "userinfo.email" scopes.
         /// </summary>
-        /// <param name="clientId">The Google Client Id</param>
-        /// <param name="clientSecret">The Google Client Secret</param>
+        /// <param name="clientId">The LinkedIn Client Id</param>
+        /// <param name="clientSecret">The LinkedIn Client Secret</param>
         public LinkedInOAuth2Client(string clientId, string clientSecret)
             : this(clientId, clientSecret, new[] { "" }) { }
 
         /// <summary>
-        /// Creates a new Google OAuth2 client.
+        /// Creates a new LinkedIn OAuth2 client.
         /// </summary>
-        /// <param name="clientId">The Google Client Id</param>
-        /// <param name="clientSecret">The Google Client Secret</param>
+        /// <param name="clientId">The LinkedIn Client Id</param>
+        /// <param name="clientSecret">The LinkedIn Client Secret</param>
         /// <param name="requestedScopes">One or more requested scopes, passed without the base URI.</param>
         public LinkedInOAuth2Client(string clientId, string clientSecret, params string[] requestedScopes)
             : base("linkedin")
@@ -180,7 +180,7 @@ namespace DotNetOpenAuth.LinkedInOAuth2
         }
 
         /// <summary>
-        /// Google requires that all return data be packed into a "state" parameter.
+        /// LinkedIn requires that all return data be packed into a "state" parameter.
         /// This should be called before verifying the request, so that the url is rewritten to support this.
         /// </summary>
         public static void RewriteRequest()
